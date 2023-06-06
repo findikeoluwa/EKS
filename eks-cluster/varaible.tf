@@ -28,7 +28,7 @@ variable "subnet_id" {
   description = "The ID of the subnets to use"
   type        = list(string)
   default     = [
-    "subnet-02debf05f2edbba3c",
+    "subnet-087bba0561b259a45",
     "subnet-0df921461434d7cbe"
   ]
 }
