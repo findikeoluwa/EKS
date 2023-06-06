@@ -1,5 +1,5 @@
 resource "aws_eks_cluster" "aws_eks" {
-  name     = "remzy"
+  name     = "ikeoluwa"
   role_arn = aws_iam_role.eks_cluster.arn
 
   vpc_config {
@@ -13,23 +13,23 @@ resource "aws_eks_cluster" "aws_eks" {
   ]
 
   tags = {
-    Name = "remzy"
+    Name = "ikeoluwa"
   }
 }
 
-resource "aws_eks_node_group" "remzo" {
+resource "aws_eks_node_group" "ike" {
   cluster_name    = aws_eks_cluster.aws_eks.name
-  node_group_name = "remzo"
+  node_group_name = "ike"
   node_role_arn   = aws_iam_role.eks_nodes.arn
   subnet_ids      = var.subnet_id
 
   scaling_config {
-    desired_size = 1
+    desired_size = 2
     max_size     = 10
     min_size     = 1
   }
 
-
+  
   labels = {
     create_before_destroy = true
   }
